@@ -1,9 +1,11 @@
 import './App.css'
 import { Routes, Route, BrowserRouter } from 'react-router-dom'
 import Layout from './components/layout'
-import { Home } from './pages/home/Home'
-import { Cart } from './pages/cart/Cart'
-import { Contact } from './pages/contact/Contact'
+import { Home } from './pages/home/Index'
+import { Cart } from './pages/cart/Index'
+import { Contact } from './pages/contact/Index'
+
+
 
 function App() {
 

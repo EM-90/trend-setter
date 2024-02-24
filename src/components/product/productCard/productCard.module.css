@@ -1,0 +1,23 @@
+
+.card {
+    display: flex;
+    flex-direction:column; 
+    height: 100%;
+    
+}
+
+.cardImage {
+    object-fit: cover;
+    width: 300px;
+    height: 400px;
+    border-radius: 10px;
+}
+
+.cardContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+   
+
+}
