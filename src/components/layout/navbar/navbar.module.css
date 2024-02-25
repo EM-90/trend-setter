@@ -1,0 +1,29 @@
+
+
+.navBar {
+    display: flex;
+    padding: 40px 50px;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: rgb(41, 41, 41);
+    color: white;
+}
+
+.links {
+   display: flex;
+   
+   
+}
+
+li {
+    padding: 0px 50px;
+    list-style: none;
+    
+   
+}
+
+li a {
+    text-decoration: none;
+    color: white;
+}
