@@ -1,5 +1,6 @@
 
 .card {
+    
     display: flex;
     flex-direction:column; 
     height: 100%;
@@ -9,7 +10,7 @@
 .cardImage {
     object-fit: cover;
     width: 300px;
-    height: 400px;
+    height: 300px;
     border-radius: 10px;
 }
 
