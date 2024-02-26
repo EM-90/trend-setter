@@ -1,13 +1,13 @@
 import { Outlet } from "react-router-dom";
 import { Navbar } from "./navbar/Index";
-import { Footer } from "./footer/Footer";
+import { Footer } from "./footer/Index";
 import styles from './contentContainer.module.css'
 
 export default function Layout() {
     return (
        <div>
         <Navbar/>
-        <div className={styles.contentContainer}>
+        <div>
           <Outlet/>
         </div>
         <Footer/>

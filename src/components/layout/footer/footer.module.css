@@ -1,0 +1,14 @@
+.footer { 
+    display: flex;
+    gap: 20px;
+    justify-content: space-around;
+    align-items: center;
+    height: 150px;
+    background-color: rgb(243, 243, 243);
+}
+
+.soMeContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 110px;
+}

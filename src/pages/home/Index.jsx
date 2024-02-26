@@ -25,19 +25,20 @@ useEffect(() => {
 
     return (
         <>
-        <h1>TrendSetter</h1>
-        <main className={styles.flexContainer}>
-        {productData.map((data) => (
-            <ProductCard
-              key={data.id}
-              title={data.title}
-              discountedPrice={data.discountedPrice}
-              price={data.price}
-              rating={data.rating}
-              image={data.image.url}
-            />
-          ))}
-        </main>
+        <div>
+            <div className={styles.flexContainer}>
+            {productData.map((data) => (
+                <ProductCard
+                  key={data.id}
+                  title={data.title}
+                  discountedPrice={data.discountedPrice}
+                  price={data.price}
+                  rating={data.rating}
+                  image={data.image.url}
+                />
+              ))}
+            </div>
+          </div>
         </>
     )
    
