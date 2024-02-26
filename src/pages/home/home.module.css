@@ -1,10 +1,11 @@
 
 
 .flexContainer {
-    display: flex;
+    display: inline-flex;
+    gap:13px;
     flex-wrap: wrap;
     justify-content: center;
-    width: 100%;
+    
     
   }
 

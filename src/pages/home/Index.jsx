@@ -25,7 +25,6 @@ useEffect(() => {
 
     return (
         <>
-        <div>
             <div className={styles.flexContainer}>
             {productData.map((data) => (
                 <ProductCard
@@ -38,7 +37,6 @@ useEffect(() => {
                 />
               ))}
             </div>
-          </div>
         </>
     )
    

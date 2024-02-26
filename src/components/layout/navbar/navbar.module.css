@@ -2,15 +2,19 @@
 
 .navBar {
     display: flex;
+    justify-content: center;
     padding: 40px 50px;
     margin-bottom: 40px;
-    justify-content: space-between;
+    background-color: rgb(41, 41, 41);  
+}
+
+.navContentContainer {
+    width: 1240px;
+    display: flex;
+    justify-content:space-between;
     align-items: center;
-    background-color: rgb(41, 41, 41);
     color: white;
-    width: 100%;
     flex-wrap: wrap;
-    
 }
 
 .links {
@@ -25,6 +29,10 @@ li {
     list-style: none;
     
    
+}
+
+li:last-child {
+    padding-right: 0;
 }
 
 li a {
