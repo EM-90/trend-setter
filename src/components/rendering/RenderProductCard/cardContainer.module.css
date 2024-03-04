@@ -1,0 +1,9 @@
+
+.flexContainer {
+    display: inline-flex;
+    gap:13px;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+    
+  }
