@@ -1,43 +1,14 @@
-import ProductCard from "../../components/product/productCard/Index";
-import fetchData from "../../services/api";
-import { useState, useEffect } from "react";
+import { RenderProductCard } from "../../components/rendering/RenderProductCard"
 import styles from "./home.module.css"
 
-export const Home = ({apiUrl}) => {
+export const Home = () => {  
+  const apiUrl = "https://v2.api.noroff.dev/online-shop"
 
-const [productData, setProductData] = useState([]);
-  
-useEffect(() => {
-    const fetchDataAndSetState = async () => {
-      try {
-        const data = await fetchData(apiUrl);
-        if (data) {
-          setProductData(data.data);
-        }
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
-
-    fetchDataAndSetState();
-  }, [apiUrl]);
-
-
-    return (
-        <>
-            <div className={styles.flexContainer}>
-            {productData.map((data) => (
-                <ProductCard
-                  key={data.id}
-                  title={data.title}
-                  discountedPrice={data.discountedPrice}
-                  price={data.price}
-                  rating={data.rating}
-                  image={data.image.url}
-                />
-              ))}
-            </div>
-        </>
-    )
-   
+  return (
+    <div className={styles.flexContainer}>
+      <RenderProductCard/>
+    </div>
+  )
 }
+
+
