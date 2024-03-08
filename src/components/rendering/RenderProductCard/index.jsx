@@ -1,30 +1,25 @@
 import ProductCard from "../../product/productCard/Index";
-import fetchData from "../../../services/api";
-import { useState, useEffect } from "react";
 import styles from './cardContainer.module.css'
+import UseFetchData from "../../../services/api/UseFetchData/Index";
 
 
 export const RenderProductCard = ({apiUrl}) => {
 
-    const [productData, setProductData] = useState([]);
-      
-    useEffect(() => {
-        const fetchDataAndSetState = async () => {
-          try {
-            const data = await fetchData(apiUrl);
-            if (data) {
-              setProductData(data.data);
-            }
-          } catch (error) {
-            console.error('Error fetching data:', error);
-          }
-        };
-    
-        fetchDataAndSetState();
-      }, [apiUrl]);
+    const {data: productData, loading, error} = UseFetchData(apiUrl);
 
-    
-    
+    if (loading) {
+      return(
+        <div className="loadingScreen">Loading....</div>
+      ) 
+    }
+
+    if (error) {
+      console.log(productData);
+      return(
+        <div>Error fetching the requsted data</div>
+      ) 
+    }
+
         return (
             <div className={styles.flexContainer}>
                 {productData.map((data) => (
