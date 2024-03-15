@@ -1,0 +1,17 @@
+
+form {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+input[type="text"].searchInput {
+    outline: none;
+    height: 40px;
+    width: 100%;
+    font-size: 16px;
+    padding: 0 10px;
+    border: 1px solid lightgray;
+    box-shadow: none;
+    background-color: rgb(241, 241, 241);
+    border-radius: 7px;
+}

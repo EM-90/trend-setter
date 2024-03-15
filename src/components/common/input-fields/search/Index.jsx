@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styles from "./search.module.css"
 
 const Search = ({onSearch}) => {
     const [searchTerm, setSearchTerm] = useState('');
@@ -12,7 +13,7 @@ const Search = ({onSearch}) => {
 
     return (
         <form>
-            <input type="text" placeholder="Search..." value={searchTerm} onChange={handelChange} />
+            <input type="text" className={styles.searchInput} placeholder="Search..." value={searchTerm} onChange={handelChange} />
         </form>
     )
 }
