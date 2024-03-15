@@ -1,25 +1,21 @@
 import { useState } from "react";
-import { RenderProductCard } from "../../../rendering/RenderProductCard";
 
-const Search = ({ apiUrl }) => {
-  const [searchQuery, setSearchQuery] = useState("");
+const Search = ({onSearch}) => {
+    const [searchTerm, setSearchTerm] = useState('');
 
-  const handleSearchChange = (event) => {
-    setSearchQuery(event.target.value);
-  };
+    const handelChange = (event) => {
+        const value = event.target.value;
+        setSearchTerm(value);
+        onSearch(value);
+        
+    } 
 
-  return (
-    <div>
-      <input
-        type="text"
-        placeholder="Search products..."
-        value={searchQuery}
-        onChange={handleSearchChange}
-      />
-      <RenderProductCard apiUrl={apiUrl} searchQuery={searchQuery}/>
-    </div>
-  );
-};
+    return (
+        <form>
+            <input type="text" placeholder="Search..." value={searchTerm} onChange={handelChange} />
+        </form>
+    )
+}
 
 export default Search;
 
