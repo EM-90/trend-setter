@@ -1,7 +1,6 @@
 import ProductCard from "../../product/productCard/Index";
-import fetchData from "../../../services/api";
-import { useState, useEffect } from "react";
 import styles from './cardContainer.module.css'
+import UseFetchData from "../../../services/api/UseFetchData/Index";
 
 
 export const RenderProductCard = ({apiUrl, searchTerm}) => {
@@ -23,15 +22,14 @@ export const RenderProductCard = ({apiUrl, searchTerm}) => {
         fetchDataAndSetState();
       }, [apiUrl]);
 
-      const filteredProducts = productData.filter((product) =>
-      product.title.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-
+      const filteredProductData = productData.filter((data) =>
+      data.title.toLowerCase().includes(searchQuery.toLowerCase())
+      );
     
     
         return (
             <div className={styles.flexContainer}>
-                {filteredProducts.map((data) => (
+                {filteredProductData.map((data) => (
                     <ProductCard
                       key={data.id}
                       title={data.title}
