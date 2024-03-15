@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import styles from './cardContainer.module.css'
 
 
-export const RenderProductCard = ({apiUrl, searchQuery}) => {
+export const RenderProductCard = ({apiUrl, searchTerm}) => {
 
     const [productData, setProductData] = useState([]);
       
@@ -23,14 +23,15 @@ export const RenderProductCard = ({apiUrl, searchQuery}) => {
         fetchDataAndSetState();
       }, [apiUrl]);
 
-      const filteredProductData = productData.filter((data) =>
-      data.title.toLowerCase().includes(searchQuery.toLowerCase())
-      );
+      const filteredProducts = productData.filter((product) =>
+      product.title.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
     
     
         return (
             <div className={styles.flexContainer}>
-                {filteredProductData.map((data) => (
+                {filteredProducts.map((data) => (
                     <ProductCard
                       key={data.id}
                       title={data.title}
