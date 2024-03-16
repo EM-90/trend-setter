@@ -17,6 +17,7 @@ export const RenderProductCard = ({apiUrl, searchTerm}) => {
       {filteredProductData.map((data) => (
         <ProductCard
           key={data.id}
+          id={data.id}
           title={data.title}
           discountedPrice={data.discountedPrice}
           price={data.price}

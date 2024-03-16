@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 const UseFetchData = (apiUrl) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     let isMounted = true;
@@ -19,7 +19,7 @@ const UseFetchData = (apiUrl) => {
         }
       } catch (error) {
         if (isMounted) {
-          setError(error);
+          setError(true);
           setLoading(false);
         }
       }

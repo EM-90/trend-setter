@@ -4,6 +4,7 @@ import Layout from './components/layout'
 import { Home } from './pages/home/Index'
 import { Cart } from './pages/cart/Index'
 import { Contact } from './pages/contact/Index'
+import ProductDetails from './pages/productDetails/Productdetails'
 
 
 
@@ -17,6 +18,7 @@ function App() {
           <Route index element={<Home/>}/>
           <Route path="/contact" element={<Contact/>}/>
           <Route path="/cart" element={<Cart/>}/>
+          <Route path="/product/:id" element={<ProductDetails/>}/>
         </Route>
       </Routes>
     </BrowserRouter>

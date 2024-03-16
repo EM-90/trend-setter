@@ -1,8 +1,9 @@
+import { Link } from 'react-router-dom';
 import styles from './productCard.module.css'
 
 export default function ProductCard(props) {
     return (
-     <div className={styles.card}>
+     <Link to={`/product/${props.id}`} className={styles.card}>
         <img src={props.image} alt={props.title} className={styles.cardImage} />
         <div className={styles.cardContent}>
           <h3 className={styles.cardTitle}>{props.title}</h3>
@@ -12,6 +13,6 @@ export default function ProductCard(props) {
           </div>
           <p className={styles.cardRating}>Rating: {props.rating}</p>
         </div>
-     </div>
+     </Link>
   );
 }

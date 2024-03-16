@@ -14,7 +14,7 @@ export const Home = () => {
   }
 
   return (
-    <div>
+    <div className="homeContainer">
       <Search onSearch={handleSearch} />
       <div className={styles.flexContainer}>
         <RenderProductCard apiUrl={apiUrl} searchTerm={searchTerm} />
