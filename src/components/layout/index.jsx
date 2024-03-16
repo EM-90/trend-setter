@@ -5,7 +5,7 @@ import styles from './contentContainer.module.css'
 
 export default function Layout() {
     return (
-       <div>
+       <div className={styles.layoutContainer}>
         <Navbar/>
         <div className={styles.contentContainer}>
           <div className={styles.content}>
