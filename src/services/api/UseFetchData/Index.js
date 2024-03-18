@@ -4,6 +4,7 @@ const UseFetchData = (apiUrl) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
+  const [cartItems, setCartItem] = useState([])
 
   useEffect(() => {
     let isMounted = true;
@@ -32,7 +33,11 @@ const UseFetchData = (apiUrl) => {
     };
   }, [apiUrl]);
 
-  return {data, loading, error};
+  const addToCart = (product) => {
+    setCartItem([...cartItems, product]);
+  }
+
+  return {data, loading, error, cartItems, addToCart};
 
 };
 

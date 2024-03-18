@@ -13,11 +13,27 @@ h1,h2,h3, .Logo{
 }
 
 
-a,p {
+a,p, span {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 16px;
 }
 
+.cartIcon {
+  position: relative;
 
+}
+
+
+
+.cartItemCount {
+  text-align: center;
+  position:absolute;
+  z-index: 10;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: rgb(185, 255, 185);
+  color: rgb(53, 53, 53);
+}

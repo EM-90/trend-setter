@@ -1,12 +1,15 @@
-import { useParams } from "react-router-dom";
 import UseFetchData from "../../services/api/UseFetchData/Index";
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { useCart } from "../../context/cartContext/CartContext";
 
 export default function ProductDetails() {
     const { id } = useParams(); 
     const apiUrl = `https://v2.api.noroff.dev/online-shop/${id}`;
     const { data: productData, loading, error } = UseFetchData(apiUrl); 
     const [product, setProduct] = useState(null);
+    const { addToCart } = useCart();
+
 
     useEffect(() => {
         if (productData) {
@@ -16,6 +19,11 @@ export default function ProductDetails() {
 
     if (loading) return <div>Loading...</div>;
     if (error) return <div>Error: {error.message}</div>;
+
+    const handleAddToCart = () => {
+        addToCart(product);
+        console.log("Product added to cart:", product);
+    };
 
     return (
         <div>
@@ -37,7 +45,7 @@ export default function ProductDetails() {
                             </div>
                             <div className="buttonContainer">
                                 <button className="secondary">Wishlist</button>
-                                <button className="primary">Add to cart</button>
+                                <button className="primary" onClick={handleAddToCart}>Add to cart</button>
                             </div>
                         </div>
                     </div>
