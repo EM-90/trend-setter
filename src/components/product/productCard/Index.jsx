@@ -8,8 +8,13 @@ export default function ProductCard(props) {
         <div className={styles.cardContent}>
           <h3 className={styles.cardTitle}>{props.title}</h3>
           <div className={styles.priceSection}>
-            <p className={styles.cardPrice}>Before: ${props.price}</p>
-            <p className={styles.cardPriceDiscount}>New Price: ${props.discountedPrice}</p>
+          {props.discountedPrice < props.price ? (
+            <>
+              <p className={styles.cardPriceDiscount}>New Price: ${props.discountedPrice}</p>
+            </>
+          ) : (
+            <p className={styles.cardPrice}>Price: ${props.price}</p>
+          )}
           </div>
           <p className={styles.cardRating}>Rating: {props.rating}</p>
         </div>

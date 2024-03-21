@@ -36,8 +36,9 @@ const UseFetchData = (apiUrl) => {
   const addToCart = (product) => {
     setCartItem([...cartItems, product]);
   }
-
+  
   return {data, loading, error, cartItems, addToCart};
+
 
 };
 
