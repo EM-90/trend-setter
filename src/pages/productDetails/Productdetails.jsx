@@ -2,6 +2,7 @@ import UseFetchData from "../../services/api/UseFetchData/Index";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useCart } from "../../context/cartContext/CartContext";
+import findPrecentage from "../../components/product/calculateProduct/FindPrecentage";
 
 export default function ProductDetails() {
     const { id } = useParams(); 
@@ -9,6 +10,7 @@ export default function ProductDetails() {
     const { data: productData, loading, error } = UseFetchData(apiUrl); 
     const [product, setProduct] = useState(null);
     const { addToCart } = useCart();
+    const precentage = findPrecentage(product.price, product.discountedPrice);
 
 
     useEffect(() => {
@@ -32,6 +34,9 @@ export default function ProductDetails() {
                     <h1>Product details</h1>
                     <div className="productDetailsContainer">
                         {product.image && <img src={product.image.url} alt={product.title} />}
+                        {precentage > 0 && (
+                            <p>{precentage}% off</p>
+                        )}
                         <div>
                             <h3>{product.title}</h3>
                             <div className="priceContainer">
@@ -54,5 +59,4 @@ export default function ProductDetails() {
         </div>
     );
 }
-
 

@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
 
-const UseFetchData = (apiUrl) => {
+const useFetchData = (apiUrl) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
-  const [cartItems, setCartItem] = useState([])
 
   useEffect(() => {
     let isMounted = true;
@@ -33,14 +32,9 @@ const UseFetchData = (apiUrl) => {
     };
   }, [apiUrl]);
 
-  const addToCart = (product) => {
-    setCartItem([...cartItems, product]);
-  }
-  
-  return {data, loading, error, cartItems, addToCart};
-
-
+  return { data, loading, error };
 };
 
-export default UseFetchData;
+export default useFetchData;
+
 

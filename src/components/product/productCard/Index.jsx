@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 import styles from './productCard.module.css'
-import calculateProduct from '../calculateProduct';
+import findPrecentage from '../calculateProduct/FindPrecentage';
 
 export default function ProductCard(props) {
-  const discountPercentage = calculateProduct(props.price, props.discountedPrice);
+  const discountPercentage = findPrecentage(props.price, props.discountedPrice);
 
   return (
     <Link to={`/product/${props.id}`} className={styles.card}>

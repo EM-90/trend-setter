@@ -1,9 +1,10 @@
 import { useCart } from "../../context/cartContext/CartContext";
-import calculateProduct from "../../components/product/calculateProduct";
+import calculateProduct from "../../components/product/calculateProduct/FindPrecentage";
 import styles from "./itemInCart.module.css";
+import findPrecentage from "../../components/product/calculateProduct/FindPrecentage";
 
 export const Cart = () => {
-    const { cartItems, decrementQuantity, incrementQuantity } = useCart();
+    const { cartItems, decrementQuantity, incrementQuantity, removeFromCart } = useCart();
 
     const handleDecreaseQuantity = (index) => {
       decrementQuantity(index);
@@ -12,6 +13,10 @@ export const Cart = () => {
     const handleIncreaseQuantity = (index) => {
       incrementQuantity(index);
     };
+
+    const handelRemoveFromCart = () => {
+      removeFromCart();
+    }
    
 
     return (
@@ -27,7 +32,7 @@ export const Cart = () => {
             <div className="priceSection">
               <p className="price">{item.price}</p>
               <p className="discountedPrice">{item.discountedPrice}</p>
-              <p className="productDiscount">{calculateProduct(item.price, item.discountedPrice)}% off</p>
+              <p className="productDiscount">{findPrecentage(item.price, item.discountedPrice)}% off</p>
             </div>
             <span className="rating">Rating {item.rating}/5</span>
             <p className="productDescription">{item.description}</p>
@@ -37,6 +42,7 @@ export const Cart = () => {
               <input type="number" value={item.quantity} readOnly />
               <button onClick={() => handleIncreaseQuantity(index)}>+</button>
             </div>
+            <button onClick={() => handelRemoveFromCart()}>Remove product</button>
           </div>
         ))}
       </div>

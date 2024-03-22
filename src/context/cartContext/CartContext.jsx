@@ -33,7 +33,15 @@ export const CartProvider = ({ children }) => {
     const updatedCartItems = [...cartItems];
     updatedCartItems.splice(index, 1);
     setCartItems(updatedCartItems);
+    localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
+    console.log(localStorage);
+    if (updatedCartItems.length === 0) {
+      localStorage.removeItem('cartItems');
+    } else {
+      localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
+    }
   };
+  
 
   const incrementQuantity = (index) => {
     const updatedCartItems = [...cartItems];

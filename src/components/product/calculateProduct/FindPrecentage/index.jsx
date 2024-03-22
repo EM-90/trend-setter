@@ -1,5 +1,5 @@
 
-function calculateProduct(price, discount) {
+function findPrecentage(price, discount) {
 
     if (price >= discount) {
         const discountPercentage = Math.floor(((price - discount) / price) * 100) ;
@@ -7,4 +7,4 @@ function calculateProduct(price, discount) {
     }
 }
 
-export default calculateProduct
+export default findPrecentage
