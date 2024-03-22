@@ -10,14 +10,18 @@ export default function ProductDetails() {
     const { data: productData, loading, error } = UseFetchData(apiUrl); 
     const [product, setProduct] = useState(null);
     const { addToCart } = useCart();
-    const precentage = findPrecentage(product.price, product.discountedPrice);
-
+    let precentage = 0; 
 
     useEffect(() => {
         if (productData) {
             setProduct(productData);
         }
     }, [productData, id]);
+
+
+    if (product) {
+        precentage = findPrecentage(product.price, product.discountedPrice);
+    }
 
     if (loading) return <div>Loading...</div>;
     if (error) return <div>Error: {error.message}</div>;
@@ -59,4 +63,5 @@ export default function ProductDetails() {
         </div>
     );
 }
+
 
