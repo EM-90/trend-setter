@@ -1,7 +1,7 @@
 import { useCart } from "../../context/cartContext/CartContext";
-import calculateProduct from "../../components/product/calculateProduct/FindPrecentage";
 import styles from "./itemInCart.module.css";
 import findPrecentage from "../../components/product/calculateProduct/FindPrecentage";
+import GetTotalValue from "../../components/product/calculateProduct/GetTotalValue/Index";
 
 export const Cart = () => {
     const { cartItems, decrementQuantity, incrementQuantity, removeFromCart } = useCart();
@@ -28,23 +28,29 @@ export const Cart = () => {
              <img className={styles.productImage} src={item.image.url} alt={item.title} />
             </div>
             <div className={styles.productContent}>
-            <h3>{item.title}</h3>
-            <div className="priceSection">
-              <p className="price">{item.price}</p>
-              <p className="discountedPrice">{item.discountedPrice}</p>
-              <p className="productDiscount">{findPrecentage(item.price, item.discountedPrice)}% off</p>
-            </div>
-            <span className="rating">Rating {item.rating}/5</span>
-            <p className="productDescription">{item.description}</p>
+              <h3>{item.title}</h3>
+              <div className="priceSection">
+                <p className="price">{item.price}</p>
+                <p className="discountedPrice">{item.discountedPrice}</p>
+                <p className="productDiscount">{findPrecentage(item.price, item.discountedPrice)}% off</p>
+              </div>
+              <span className="rating">Rating {item.rating}/5</span>
+              <p className="productDescription">{item.description}</p>
             </div>
             <div className={styles.addProductContainer}>
               <button onClick={() => handleDecreaseQuantity(index)}>-</button>
               <input type="number" value={item.quantity} readOnly />
               <button onClick={() => handleIncreaseQuantity(index)}>+</button>
             </div>
-            <button onClick={() => handelRemoveFromCart()}>Remove product</button>
+            <div className={styles.buttonContainer}>
+             <button onClick={() => handelRemoveFromCart()}>Remove product</button>
+            </div>
+            
           </div>
         ))}
+        <div className={styles.totalContainer}>
+        <GetTotalValue/>
+        </div>
       </div>
     ); 
 }

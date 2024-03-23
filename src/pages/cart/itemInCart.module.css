@@ -1,5 +1,8 @@
 .cartProduct {
     display: flex;
+    justify-content: space-between;
+    padding:10px 0px;
+    
     
     
 }
@@ -14,6 +17,23 @@
     height: 100%;
     object-fit: cover;
 
+}
+
+.productContent {
+    max-width: 200px;
+}
+
+.addProductContainer {
+    align-self: center;
+}
+
+.buttonContainer {
+    align-self: center;
+}
+
+.totalContainer {
+    text-align: right;
+    font-size: 60px;
 }
 
 .priceSection {
