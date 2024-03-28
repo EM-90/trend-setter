@@ -3,6 +3,7 @@
 import { useCart } from "../../context/cartContext/CartContext";
 import styles from "./itemInCart.module.css";
 import findPrecentage from "../../components/product/calculateProduct/FindPrecentage";
+import GetTotalValue from "../../components/product/calculateProduct/GetTotalValue/Index";
 
 export const Cart = () => {
   const { cartItems, decrementQuantity, incrementQuantity, removeFromCart } =
@@ -16,8 +17,8 @@ export const Cart = () => {
     incrementQuantity(index);
   };
 
-  const handelRemoveFromCart = () => {
-    removeFromCart();
+  const handelRemoveFromCart = (index) => {
+    removeFromCart(index);
   };
 
   return (
@@ -49,9 +50,16 @@ export const Cart = () => {
             <input type="number" value={item.quantity} readOnly />
             <button onClick={() => handleIncreaseQuantity(index)}>+</button>
           </div>
-          <button onClick={() => handelRemoveFromCart()}>Remove product</button>
+          <div className={styles.buttonContainer}>
+            <button onClick={() => handelRemoveFromCart(index)}>
+              Remove product
+            </button>
+          </div>
         </div>
       ))}
+      <div className={styles.totalContainer}>
+        <GetTotalValue />
+      </div>
     </div>
   );
 };
