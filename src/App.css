@@ -1,19 +1,26 @@
+/** @format */
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-
-
-h1,h2,h3,h4,h5, .Logo{
+h1,
+h2,
+h3,
+h4,
+h5,
+.Logo {
   font-family: "Raleway", sans-serif;
   font-weight: 800;
   font-style: normal;
 }
 
-
-a,p, label, span {
+a,
+p,
+label,
+span {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -22,14 +29,11 @@ a,p, label, span {
 
 .cartIcon {
   position: relative;
-
 }
-
-
 
 .cartItemCount {
   text-align: center;
-  position:absolute;
+  position: absolute;
   z-index: 10;
   height: 20px;
   width: 20px;

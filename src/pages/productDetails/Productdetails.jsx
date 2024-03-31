@@ -3,7 +3,7 @@
 import UseFetchData from "../../services/api/UseFetchData/Index";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import PrimaryButton from "../../components/common/buttons/primaryButton/PrimaryButton";
+import PrimaryButton from "../../components/common/buttons/primaryButton/Index";
 import findPrecentage from "../../components/product/calculateProduct/FindPrecentage";
 
 export default function ProductDetails() {

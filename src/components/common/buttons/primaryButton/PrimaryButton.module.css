@@ -1,0 +1,25 @@
+/** @format */
+
+.primaryButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background-color: #e8ddfb;
+  color: #7520ff;
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  border-radius: 50px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 16px;
+  letter-spacing: 0.75px;
+}
+
+.primaryButton:hover {
+  background-color: #7520ff;
+  color: #ffff;
+  cursor: pointer;
+}

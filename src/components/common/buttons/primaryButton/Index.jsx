@@ -1,5 +1,7 @@
 /** @format */
 
+import styles from "./PrimaryButton.module.css";
+import { RiShoppingCartLine } from "react-icons/ri";
 import { useCart } from "../../../../context/cartContext/CartContext";
 
 function PrimaryButton({ product }) {
@@ -11,8 +13,8 @@ function PrimaryButton({ product }) {
   };
 
   return (
-    <button className="primary" onClick={handleAddToCart}>
-      Add to cart
+    <button className={styles.primaryButton} onClick={handleAddToCart}>
+      Add to cart <RiShoppingCartLine size={24} />
     </button>
   );
 }
