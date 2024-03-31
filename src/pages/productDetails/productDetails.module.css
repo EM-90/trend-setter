@@ -1,0 +1,64 @@
+/** @format */
+
+.productDetailsContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 40px;
+}
+.imageContainer {
+  position: relative;
+}
+
+img {
+  border-radius: 10px;
+}
+
+.productTextContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 180px;
+  gap: 10px;
+}
+
+.price {
+  text-decoration: line-through;
+  color: rgb(156, 156, 156);
+}
+
+.discountPrice {
+  font-size: 24px;
+  font-weight: 600;
+  color: #0834a5;
+}
+
+.productImage {
+  width: 100%;
+  min-width: 200px;
+  height: 300px;
+  object-fit: cover;
+  position: relative;
+}
+
+.priceContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.descContainer {
+}
+
+.buttonContainer {
+}
+
+.discountBadge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgb(5, 101, 136);
+  color: #fff;
+  padding: 20px;
+  border-top-left-radius: 10px;
+}
