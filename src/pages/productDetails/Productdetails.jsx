@@ -31,7 +31,7 @@ export default function ProductDetails() {
     <div>
       {product && (
         <>
-          <h1>Product details</h1>
+          <p className="breadcrum">Product details</p>
           <div className={styles.productDetailsContainer}>
             <div className={styles.imageContainer}>
               {product.image && (
@@ -42,7 +42,7 @@ export default function ProductDetails() {
                 />
               )}
               {precentage > 0 && (
-                <p className={styles.discountBadge}>{precentage}% off</p>
+                <p className={styles.discountBadge}>-{precentage}%</p>
               )}
             </div>
             <div className={styles.productTextContainer}>
@@ -53,8 +53,8 @@ export default function ProductDetails() {
                   ${product.discountedPrice}
                 </p>
               </div>
-              <p>Rating:{product.rating}/5</p>
-              <div className="descContainer">
+              <p className={styles.rating}>Rating:{product.rating}/5</p>
+              <div className={styles.descContainer}>
                 <h4>Description</h4>
                 <p>{product.description}</p>
               </div>
