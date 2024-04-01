@@ -65,13 +65,13 @@ img {
 
 .discountBadge {
   position: absolute;
-  top: 0;
-  left: 0;
-  background-color: rgb(238, 103, 36);
+  top: 10px;
+  left: 10px;
+  background-color: #7520ff;
   color: #fff;
-  padding: 15px;
+  padding: 17px 8px;
   border-top-left-radius: 10px;
-  border-bottom-right-radius: 10px;
   font-weight: 600;
-  font-size: 24px;
+  font-size: 18px;
+  border-radius: 50%;
 }

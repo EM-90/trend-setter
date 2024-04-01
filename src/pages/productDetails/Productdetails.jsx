@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import PrimaryButton from "../../components/common/buttons/primaryButton/Index";
 import findPrecentage from "../../components/product/calculateProduct/FindPrecentage";
 import styles from "./productDetails.module.css";
+import Rating from "../../components/common/rating/Index";
 
 export default function ProductDetails() {
   const { id } = useParams();
@@ -47,6 +48,7 @@ export default function ProductDetails() {
             </div>
             <div className={styles.productTextContainer}>
               <h3>{product.title}</h3>
+              <Rating rating={product.rating} />
               <div className={styles.priceContainer}>
                 <p className={styles.price}>${product.price}</p>
                 <p className={styles.discountPrice}>
