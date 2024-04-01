@@ -1,54 +1,63 @@
+/** @format */
 
 .card {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    position: relative; 
-    overflow: hidden;
-    border-radius: 10px;
-    cursor: pointer; 
-  }
-  
-  .card:hover {
-    background-color: rgb(247, 247, 247);
-  }
-  
-  .cardImage {
-    object-fit: cover;
-    width: 300px;
-    height: 300px;
-    border-radius: 10px;
-    transition: transform 0.3s ease; 
-  }
-  
-  .cardContent {
-    display: flex;
-    flex-direction: column;
-    padding:10px;
-    z-index: 1;
-  }
-  
-  
-  .card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(243, 243, 243, 0.432); 
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  
-  
-  .card:hover::before {
-    opacity: 1;
-  }
-  
-  
-  .card:hover .cardImage {
-    transform: scale(1.05); 
-    
-  }
-  
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.discountBadge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgb(238, 103, 36);
+  color: #fff;
+  padding: 10px;
+  border-top-left-radius: 10px;
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.card:hover {
+  background-color: rgb(247, 247, 247);
+}
+
+.cardImage {
+  object-fit: cover;
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  z-index: 1;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(243, 243, 243, 0.432);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card:hover .cardImage {
+  transform: scale(1.05);
+}
