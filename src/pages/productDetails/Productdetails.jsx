@@ -32,7 +32,6 @@ export default function ProductDetails() {
     <div>
       {product && (
         <>
-          <p className="breadcrum">Product details</p>
           <div className={styles.productDetailsContainer}>
             <div className={styles.imageContainer}>
               {product.image && (
