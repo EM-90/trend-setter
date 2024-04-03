@@ -4,10 +4,10 @@ import { useCart } from "../../context/cartContext/CartContext";
 import styles from "./itemInCart.module.css";
 import findPrecentage from "../../components/product/calculateProduct/FindPrecentage";
 import GetTotalValue from "../../components/product/calculateProduct/GetTotalValue/Index";
+import RemoveButton from "../../components/common/buttons/removeButton/Index";
 
 export const Cart = () => {
-  const { cartItems, decrementQuantity, incrementQuantity, removeFromCart } =
-    useCart();
+  const { cartItems, decrementQuantity, incrementQuantity } = useCart();
 
   const handleDecreaseQuantity = (index) => {
     decrementQuantity(index);
@@ -15,10 +15,6 @@ export const Cart = () => {
 
   const handleIncreaseQuantity = (index) => {
     incrementQuantity(index);
-  };
-
-  const handelRemoveFromCart = (index) => {
-    removeFromCart(index);
   };
 
   return (
@@ -51,9 +47,7 @@ export const Cart = () => {
             <button onClick={() => handleIncreaseQuantity(index)}>+</button>
           </div>
           <div className={styles.buttonContainer}>
-            <button onClick={() => handelRemoveFromCart(index)}>
-              Remove product
-            </button>
+            <RemoveButton index={index} />
           </div>
         </div>
       ))}
