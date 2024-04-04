@@ -4,16 +4,15 @@ import UseFetchData from "../../services/api/UseFetchData/Index";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import PrimaryButton from "../../components/common/buttons/primaryButton/Index";
-import findPrecentage from "../../components/product/calculateProduct/FindPrecentage";
 import styles from "./productDetails.module.css";
 import Rating from "../../components/common/rating/Index";
+import DiscountBadge from "../../components/common/discountBadge/Index";
 
 export default function ProductDetails() {
   const { id } = useParams();
   const apiUrl = `https://v2.api.noroff.dev/online-shop/${id}`;
   const { data: productData, loading, error } = UseFetchData(apiUrl);
   const [product, setProduct] = useState(null);
-  let precentage = 0;
 
   useEffect(() => {
     if (productData) {
@@ -21,13 +20,9 @@ export default function ProductDetails() {
     }
   }, [productData, id]);
 
-  if (product) {
-    precentage = findPrecentage(product.price, product.discountedPrice);
-  }
-
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
-
+  console.log(product);
   return (
     <div>
       {product && (
@@ -41,8 +36,8 @@ export default function ProductDetails() {
                   alt={product.title}
                 />
               )}
-              {precentage > 0 && (
-                <p className={styles.discountBadge}>-{precentage}%</p>
+              {product.discountedPrice && product.price && (
+                <DiscountBadge product={product} />
               )}
             </div>
             <div className={styles.productTextContainer}>

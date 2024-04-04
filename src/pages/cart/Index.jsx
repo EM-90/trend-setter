@@ -2,11 +2,11 @@
 
 import { useCart } from "../../context/cartContext/CartContext";
 import styles from "./itemInCart.module.css";
-import findPrecentage from "../../components/product/calculateProduct/FindPrecentage";
 import GetTotalValue from "../../components/product/calculateProduct/GetTotalValue/Index";
 import Rating from "../../components/common/rating/Index";
 import RemoveButton from "../../components/common/buttons/removeButton/Index";
 import QtyDisplay from "../../components/common/input-fields/qty-display/Index";
+import DiscountBadge from "../../components/common/discountBadge/Index";
 
 export const Cart = () => {
   const { cartItems } = useCart();
@@ -22,6 +22,7 @@ export const Cart = () => {
               src={item.image.url}
               alt={item.title}
             />
+            <DiscountBadge product={item} />
           </div>
           <div className={styles.productContent}>
             <h3>{item.title}</h3>
@@ -29,11 +30,8 @@ export const Cart = () => {
             <div className="priceSection">
               <p className="price">{item.price}</p>
               <p className="discountedPrice">{item.discountedPrice}</p>
-              <p className="productDiscount">
-                {findPrecentage(item.price, item.discountedPrice)}% off
-              </p>
             </div>
-            <span className="rating">Rating {item.rating}/5</span>
+
             <p className="productDescription">{item.description}</p>
           </div>
           <QtyDisplay index={index} item={item} />

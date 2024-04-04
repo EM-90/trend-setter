@@ -1,0 +1,14 @@
+/** @format */
+
+.discountBadge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #7520ff;
+  color: #fff;
+  padding: 17px 8px;
+  border-top-left-radius: 10px;
+  font-weight: 600;
+  font-size: 18px;
+  border-radius: 50%;
+}
