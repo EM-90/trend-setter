@@ -7,6 +7,7 @@ import PrimaryButton from "../../components/common/buttons/primaryButton/Index";
 import styles from "./productDetails.module.css";
 import Rating from "../../components/common/rating/Index";
 import DiscountBadge from "../../components/common/discountBadge/Index";
+import PriceRenderer from "../../components/rendering/priceRender/Index";
 
 export default function ProductDetails() {
   const { id } = useParams();
@@ -43,13 +44,10 @@ export default function ProductDetails() {
             <div className={styles.productTextContainer}>
               <h3>{product.title}</h3>
               <Rating rating={product.rating} />
-              <div className={styles.priceContainer}>
-                <p className={styles.price}>${product.price}</p>
-                <p className={styles.discountPrice}>
-                  ${product.discountedPrice}
-                </p>
-              </div>
-              <p className={styles.rating}>Rating:{product.rating}/5</p>
+              <PriceRenderer
+                discountedPrice={product.discountedPrice}
+                price={product.price}
+              />
               <div className={styles.descContainer}>
                 <h4>Description</h4>
                 <p>{product.description}</p>

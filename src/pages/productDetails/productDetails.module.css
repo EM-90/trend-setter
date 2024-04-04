@@ -24,30 +24,12 @@ img {
   padding-left: 25px;
 }
 
-.price {
-  text-decoration: line-through;
-  color: rgb(156, 156, 156);
-}
-
-.discountPrice {
-  font-size: 24px;
-  font-weight: 800;
-  color: #0834a5;
-}
-
 .productImage {
   width: 100%;
   min-width: 200px;
   height: 300px;
   object-fit: cover;
   position: relative;
-}
-
-.priceContainer {
-  display: flex;
-  flex-direction: column;
-  padding-top: 10px;
-  padding-bottom: 10px;
 }
 
 .rating {
@@ -61,17 +43,4 @@ img {
 }
 
 .buttonContainer {
-}
-
-.discountBadge {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background-color: #7520ff;
-  color: #fff;
-  padding: 17px 8px;
-  border-top-left-radius: 10px;
-  font-weight: 600;
-  font-size: 18px;
-  border-radius: 50%;
 }

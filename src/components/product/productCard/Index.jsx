@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import styles from "./productCard.module.css";
 import DiscountBadge from "../../common/discountBadge/Index";
 import Rating from "../../common/rating/Index";
+import PriceRenderer from "../../rendering/priceRender/Index";
 
 export default function ProductCard(props) {
   return (
@@ -16,15 +17,10 @@ export default function ProductCard(props) {
         <h3 className={styles.cardTitle}>{props.title}</h3>
         <Rating rating={props.rating} />
         <div className={styles.priceSection}>
-          {props.discountedPrice < props.price ? (
-            <>
-              <p className={styles.cardPriceDiscount}>
-                ${props.discountedPrice}
-              </p>
-            </>
-          ) : (
-            <p className={styles.cardPrice}>${props.price}</p>
-          )}
+          <PriceRenderer
+            discountedPrice={props.discountedPrice}
+            price={props.price}
+          />
         </div>
       </div>
     </Link>
