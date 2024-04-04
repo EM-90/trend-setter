@@ -32,6 +32,7 @@ export const Cart = () => {
               discountedPrice={item.discountedPrice}
               price={item.price}
             />
+            <h4>Description</h4>
             <p className="productDescription">{item.description}</p>
           </div>
           <QtyDisplay index={index} item={item} />
