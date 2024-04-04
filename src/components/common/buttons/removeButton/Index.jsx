@@ -1,5 +1,7 @@
 /** @format */
 import { useCart } from "../../../../context/cartContext/CartContext";
+import styles from "./removeButton.module.css";
+import { RiDeleteBinLine } from "react-icons/ri";
 
 function RemoveButton({ index }) {
   const { removeFromCart } = useCart();
@@ -9,7 +11,12 @@ function RemoveButton({ index }) {
   };
 
   return (
-    <button onClick={() => handelRemoveFromCart(index)}>Remove product</button>
+    <button
+      className={styles.removeButton}
+      onClick={() => handelRemoveFromCart(index)}
+    >
+      <RiDeleteBinLine size={16} /> Remove
+    </button>
   );
 }
 

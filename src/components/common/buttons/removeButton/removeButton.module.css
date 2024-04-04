@@ -1,0 +1,17 @@
+/** @format */
+
+.removeButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: rgb(255, 238, 236);
+  color: rgb(74, 3, 3);
+  margin: 0 10px;
+}
+
+.removeButton:hover {
+  background-color: rgb(255, 185, 175);
+}
