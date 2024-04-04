@@ -6,17 +6,10 @@ import findPrecentage from "../../components/product/calculateProduct/FindPrecen
 import GetTotalValue from "../../components/product/calculateProduct/GetTotalValue/Index";
 import Rating from "../../components/common/rating/Index";
 import RemoveButton from "../../components/common/buttons/removeButton/Index";
+import QtyDisplay from "../../components/common/input-fields/qty-display/Index";
 
 export const Cart = () => {
-  const { cartItems, decrementQuantity, incrementQuantity } = useCart();
-
-  const handleDecreaseQuantity = (index) => {
-    decrementQuantity(index);
-  };
-
-  const handleIncreaseQuantity = (index) => {
-    incrementQuantity(index);
-  };
+  const { cartItems } = useCart();
 
   return (
     <div>
@@ -43,11 +36,7 @@ export const Cart = () => {
             <span className="rating">Rating {item.rating}/5</span>
             <p className="productDescription">{item.description}</p>
           </div>
-          <div className={styles.addProductContainer}>
-            <button onClick={() => handleDecreaseQuantity(index)}>-</button>
-            <input type="number" value={item.quantity} readOnly />
-            <button onClick={() => handleIncreaseQuantity(index)}>+</button>
-          </div>
+          <QtyDisplay index={index} item={item} />
           <div className={styles.buttonContainer}>
             <RemoveButton index={index} />
           </div>
