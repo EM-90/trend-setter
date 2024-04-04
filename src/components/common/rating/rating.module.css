@@ -1,0 +1,9 @@
+/** @format */
+
+.cardRating {
+  display: flex;
+  gap: 3px;
+  color: rgb(219, 132, 1);
+  font-size: 18px;
+  font-weight: 500;
+}

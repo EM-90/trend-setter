@@ -8,22 +8,26 @@
   overflow: hidden;
   border-radius: 10px;
   cursor: pointer;
+  text-decoration: none;
+  color: rgb(43, 43, 43);
 }
 
 .discountBadge {
   position: absolute;
-  top: 0;
-  left: 0;
-  background-color: rgb(238, 103, 36);
+  top: 10px;
+  left: 10px;
+  background-color: #7520ff;
   color: #fff;
-  padding: 10px;
+  padding: 17px 8px;
   border-top-left-radius: 10px;
   font-weight: 600;
-  font-size: 24px;
+  font-size: 18px;
+  border-radius: 50%;
 }
 
 .card:hover {
   background-color: rgb(247, 247, 247);
+  border: 1px solid rgba(200, 196, 255, 0.432);
 }
 
 .cardImage {
@@ -40,6 +44,7 @@
   flex-direction: column;
   padding: 10px;
   z-index: 1;
+  gap: 2px;
 }
 
 .card::before {
@@ -49,7 +54,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(243, 243, 243, 0.432);
+  background: rgba(239, 238, 255, 0.432);
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -60,4 +65,19 @@
 
 .card:hover .cardImage {
   transform: scale(1.05);
+}
+
+.cardPriceDiscount,
+.cardPrice {
+  font-size: 24px;
+  font-weight: 800;
+  color: #0834a5;
+}
+
+.cardRating {
+  display: flex;
+  gap: 3px;
+  color: rgb(219, 132, 1);
+  font-size: 18px;
+  font-weight: 500;
 }

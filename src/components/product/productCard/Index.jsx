@@ -3,6 +3,7 @@
 import { Link } from "react-router-dom";
 import styles from "./productCard.module.css";
 import findPrecentage from "../calculateProduct/FindPrecentage";
+import Rating from "../../common/rating/Index";
 
 export default function ProductCard(props) {
   const discountPercentage = findPrecentage(props.price, props.discountedPrice);
@@ -17,18 +18,18 @@ export default function ProductCard(props) {
       </div>
       <div className={styles.cardContent}>
         <h3 className={styles.cardTitle}>{props.title}</h3>
+        <Rating rating={props.rating} />
         <div className={styles.priceSection}>
           {props.discountedPrice < props.price ? (
             <>
               <p className={styles.cardPriceDiscount}>
-                Price: ${props.discountedPrice}
+                ${props.discountedPrice}
               </p>
             </>
           ) : (
-            <p className={styles.cardPrice}>Price: ${props.price}</p>
+            <p className={styles.cardPrice}>${props.price}</p>
           )}
         </div>
-        <p className={styles.cardRating}>Rating: {props.rating}/5</p>
       </div>
     </Link>
   );

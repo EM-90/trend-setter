@@ -4,6 +4,7 @@ import { useCart } from "../../context/cartContext/CartContext";
 import styles from "./itemInCart.module.css";
 import findPrecentage from "../../components/product/calculateProduct/FindPrecentage";
 import GetTotalValue from "../../components/product/calculateProduct/GetTotalValue/Index";
+import Rating from "../../components/common/rating/Index";
 import RemoveButton from "../../components/common/buttons/removeButton/Index";
 
 export const Cart = () => {
@@ -31,6 +32,7 @@ export const Cart = () => {
           </div>
           <div className={styles.productContent}>
             <h3>{item.title}</h3>
+            <Rating rating={item.rating} />
             <div className="priceSection">
               <p className="price">{item.price}</p>
               <p className="discountedPrice">{item.discountedPrice}</p>
