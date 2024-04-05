@@ -24,14 +24,19 @@
   min-width: 200px;
 }
 
-.totalContainer {
-  text-align: right;
-  font-size: 60px;
-}
-
 .cartProduct > :nth-child(3) {
   display: flex;
   flex-direction: column;
   align-self: center;
   gap: 10px;
+}
+
+.totalContainer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  padding: 10px;
+  border-top: 1px solid #ccc;
 }

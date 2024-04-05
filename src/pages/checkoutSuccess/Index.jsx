@@ -1,7 +1,12 @@
 /** @format */
 
 function CheckoutSuccess() {
-  return <div>This is the checkout page</div>;
+  return (
+    <>
+      <h2>Thank you for your purchase</h2>
+      <h4>You will recive a receipt on e-mail</h4>
+    </>
+  );
 }
 
 export default CheckoutSuccess;
