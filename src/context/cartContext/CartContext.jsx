@@ -1,47 +1,50 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
+/** @format */
+
+import React, { createContext, useContext, useEffect, useState } from "react";
 
 const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
-  
   const [cartItems, setCartItems] = useState(() => {
-    const storedCartItems = localStorage.getItem('cartItems');
+    const storedCartItems = localStorage.getItem("cartItems");
     return storedCartItems ? JSON.parse(storedCartItems) : [];
   });
 
-  
   useEffect(() => {
-    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
   }, [cartItems]);
 
   const addToCart = (product) => {
-    const existingItemIndex = cartItems.findIndex(item => item.id === product.id);
-  
+    const existingItemIndex = cartItems.findIndex(
+      (item) => item.id === product.id
+    );
+
     if (existingItemIndex !== -1) {
-     
       const updatedCartItems = [...cartItems];
       updatedCartItems[existingItemIndex];
       setCartItems(updatedCartItems);
     } else {
-      
       setCartItems([...cartItems, { ...product, quantity: 1 }]);
     }
   };
-  
 
   const removeFromCart = (index) => {
     const updatedCartItems = [...cartItems];
     updatedCartItems.splice(index, 1);
     setCartItems(updatedCartItems);
-    localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
+    localStorage.setItem("cartItems", JSON.stringify(updatedCartItems));
     console.log(localStorage);
     if (updatedCartItems.length === 0) {
-      localStorage.removeItem('cartItems');
+      localStorage.removeItem("cartItems");
     } else {
-      localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
+      localStorage.setItem("cartItems", JSON.stringify(updatedCartItems));
     }
   };
-  
+
+  const clearCart = () => {
+    setCartItems([]);
+    localStorage.removeItem("cartItems");
+  };
 
   const incrementQuantity = (index) => {
     const updatedCartItems = [...cartItems];
@@ -58,7 +61,10 @@ export const CartProvider = ({ children }) => {
   };
 
   const getTotalValue = () => {
-    return cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+    return cartItems.reduce(
+      (total, item) => total + item.price * item.quantity,
+      0
+    );
   };
 
   return (
@@ -70,6 +76,7 @@ export const CartProvider = ({ children }) => {
         incrementQuantity,
         decrementQuantity,
         getTotalValue,
+        clearCart,
       }}
     >
       {children}
@@ -78,6 +85,3 @@ export const CartProvider = ({ children }) => {
 };
 
 export const useCart = () => useContext(CartContext);
-
-
-

@@ -8,6 +8,7 @@ import RemoveButton from "../../components/common/buttons/removeButton/Index";
 import QtyDisplay from "../../components/common/input-fields/qty-display/Index";
 import DiscountBadge from "../../components/common/discountBadge/Index";
 import PriceRenderer from "../../components/rendering/priceRender/Index";
+import CheckoutButton from "../../components/common/buttons/checkoutButton/Index";
 
 export const Cart = () => {
   const { cartItems } = useCart();
@@ -41,6 +42,7 @@ export const Cart = () => {
       ))}
       <div className={styles.totalContainer}>
         <GetTotalValue />
+        <CheckoutButton />
       </div>
     </div>
   );
