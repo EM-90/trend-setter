@@ -13,7 +13,7 @@ export const Navbar = () => {
   const cartItemCount = cartItems.length;
 
   const checkScreenSize = () => {
-    setIsSmallScreen(window.innerWidth < 768);
+    setIsSmallScreen(window.innerWidth < 450);
   };
 
   useEffect(() => {
@@ -28,26 +28,28 @@ export const Navbar = () => {
     <div className={styles.navBar}>
       <div className={styles.navContentContainer}>
         <div className="Logo">TrendSetter</div>
-        {isSmallScreen ? (
-          <HamburgerMenu />
-        ) : (
-          <ul className={styles.links}>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/contact">Contact</Link>
-            </li>
-            <li>
-              <Link to="/cart" className="cartIcon">
-                <RiShoppingCartLine size={32} />
-              </Link>
-              {cartItemCount > 0 && (
-                <span className="cartItemCount">{cartItemCount}</span>
-              )}
-            </li>
-          </ul>
-        )}
+        <div className={styles.navItems}>
+          {isSmallScreen ? (
+            <HamburgerMenu />
+          ) : (
+            <ul className={styles.links}>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/contact">Contact</Link>
+              </li>
+            </ul>
+          )}
+          <div className={styles.cartContainer}>
+            <Link to="/cart" className={styles.cartIcon}>
+              <RiShoppingCartLine size={32} />
+            </Link>
+            {cartItemCount > 0 && (
+              <span className="cartItemCount">{cartItemCount}</span>
+            )}
+          </div>
+        </div>
       </div>
     </div>
   );
