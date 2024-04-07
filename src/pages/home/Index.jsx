@@ -14,10 +14,12 @@ export const Home = () => {
   }
 
   return (
-    <div className="homeContainer">
-      <Search onSearch={handleSearch} />
-      <div className={styles.flexContainer}>
-        <RenderProductCard apiUrl={apiUrl} searchTerm={searchTerm} />
+    <div className={styles.homeContainer}>
+      <div className={styles.productContainer}>
+        <Search onSearch={handleSearch} />
+        <div className={styles.flexContainer}>
+          <RenderProductCard apiUrl={apiUrl} searchTerm={searchTerm} />
+        </div>
       </div>
     </div>
   );

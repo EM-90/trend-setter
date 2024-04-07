@@ -5,7 +5,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding-bottom: 40px;
+  
   align-items: center;
 }
 
@@ -22,12 +22,13 @@ img {
   display: flex;
   flex-direction: column;
   padding-left: 25px;
+  gap: 5px;
 }
 
 .productImage {
   width: 100%;
   min-width: 200px;
-  height: 300px;
+  max-height: 400px;
   object-fit: cover;
   position: relative;
 }
@@ -42,5 +43,4 @@ img {
   padding-bottom: 20px;
 }
 
-.buttonContainer {
-}
+

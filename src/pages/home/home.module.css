@@ -1,5 +1,16 @@
 
+.homeContainer {
+    max-width: 1500px;
+    
+}
 
+.productContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 100%;
+    align-items: center;
+}
 
 
   

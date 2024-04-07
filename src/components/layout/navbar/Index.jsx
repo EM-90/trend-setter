@@ -27,7 +27,7 @@ export const Navbar = () => {
   return (
     <div className={styles.navBar}>
       <div className={styles.navContentContainer}>
-        <div className="Logo">TrendSetter</div>
+        <Link to ="/" className={styles.logo}>TrendSetter</Link>
         <div className={styles.navItems}>
           {isSmallScreen ? (
             <HamburgerMenu />
