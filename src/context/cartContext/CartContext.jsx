@@ -33,7 +33,6 @@ export const CartProvider = ({ children }) => {
     updatedCartItems.splice(index, 1);
     setCartItems(updatedCartItems);
     localStorage.setItem("cartItems", JSON.stringify(updatedCartItems));
-    console.log(localStorage);
     if (updatedCartItems.length === 0) {
       localStorage.removeItem("cartItems");
     } else {

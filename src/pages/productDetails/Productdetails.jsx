@@ -23,7 +23,6 @@ export default function ProductDetails() {
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
-  console.log(product);
   return (
     <div>
       {product && (
