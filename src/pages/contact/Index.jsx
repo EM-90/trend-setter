@@ -9,6 +9,7 @@ const Contact = () => {
   const [body, setBody] = useState('');
 
   const [formErrors, setFormErrors] = useState({});
+  const [formSubmitted, setFormSubmitted] = useState(false);
 
   const validateField = (name, value) => {
     switch (name) {
@@ -68,18 +69,23 @@ const Contact = () => {
       setSubject('');
       setEmail('');
       setBody('');
+      setFormSubmitted(true);
     } else {
-      console.log('Form is not valid');
+      setFormSubmitted(false);
     }
   };
 
   return (
     <div className={styles.contactPage}>
       <h1>Contact Us</h1>
-      <form onSubmit={handleSubmit}>
+       {formSubmitted && 
+       <figure className={styles.successMessage}>
+        <p>Form submitted successfully!</p>
+       </figure> }
+      <form className={styles.contactForm} onSubmit={handleSubmit}>
         <div className={styles.formGroup}>
           <label htmlFor="firstName">First Name:
-          <input
+          <input className={styles.contactInput}  
             type="text"
             id="firstName"
             name="firstName"
@@ -87,13 +93,11 @@ const Contact = () => {
             onChange={handleChange}
             required
           /></label>
-                   {formErrors.firstName && (
-    <span className={styles.inputError}>{formErrors.firstName}</span>
-  )}
+                   {formErrors.firstName && (<span className={styles.inputError}>{formErrors.firstName}</span>)}
         </div>
         <div className={styles.formGroup}>
           <label htmlFor="lastName">Last Name:
-          <input
+          <input className={styles.contactInput} 
             type="text"
             id="lastName"
             name="lastName"
@@ -107,7 +111,7 @@ const Contact = () => {
         </div>
         <div className={styles.formGroup}>
           <label htmlFor="subject">Subject:
-          <input
+          <input className={styles.contactInput}
             type="text"
             id="subject"
             name="subject"
@@ -121,7 +125,7 @@ const Contact = () => {
         </div>
         <div className={styles.formGroup}>
           <label htmlFor="email">Email:
-          <input
+          <input className={styles.contactInput}
             type="email"
             id="email"
             name="email"
@@ -134,17 +138,15 @@ const Contact = () => {
   )}
         </div>
         <div className={styles.formGroup}>
-          <label htmlFor="body">Body:
-          <textarea
+          <label htmlFor="body">Body:</label>
+          <textarea className={styles.contactText}
             id="body"
             name="body"
             value={body}
             onChange={handleChange}
             required
-          ></textarea></label>
-                   {formErrors.body && (
-    <span className={styles.inputError}>{formErrors.body}</span>
-  )}
+          ></textarea>
+                   {formErrors.body && (<span className={styles.inputError}>{formErrors.body}</span> )}
         </div>
         <div className={styles.buttonContainer}>
          <button type="submit">Submit</button>

@@ -12,7 +12,7 @@ const Search = ({onSearch}) => {
     } 
 
     return (
-        <form>
+        <form className={styles.searchContainer}>
             <input type="text" className={styles.searchInput} placeholder="Search..." value={searchTerm} onChange={handelChange} />
         </form>
     )
