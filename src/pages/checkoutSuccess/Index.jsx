@@ -5,7 +5,7 @@ import { RiArrowDropLeftLine } from "react-icons/ri";
 
 function CheckoutSuccess() {
   return (
-    <>
+    <main>
       <div className={styles.successMessage}>
         <h2>Thank you for your purchase</h2>
         <h4>You will recive a receipt on e-mail</h4>
@@ -16,7 +16,7 @@ function CheckoutSuccess() {
           Go back to main page
         </Link>
       </div>
-    </>
+    </main>
   );
 }
 
