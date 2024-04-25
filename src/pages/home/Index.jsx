@@ -14,14 +14,15 @@ export const Home = () => {
   }
 
   return (
-    <div className={styles.homeContainer}>
-      <div className={styles.productContainer}>
+    <main className={styles.homeContainer}>
+      <section className={styles.productContainer}>
         <Search onSearch={handleSearch} />
         <div className={styles.flexContainer}>
           <RenderProductCard apiUrl={apiUrl} searchTerm={searchTerm} />
         </div>
-      </div>
-    </div>
+      </section>
+    </main>
   );
+  
 };
 

@@ -29,55 +29,56 @@ export default function ProductDetails() {
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
   return (
-    <main className={styles.mainContent}>
-      {product && (
-        <>
-          <div className={styles.productDetailsContainer}>
-            <div className={styles.imageContainer}>
-              {product.image && (
-                <img
-                  className={styles.productImage}
-                  src={product.image.url}
-                  alt={product.title}
-                />
-              )}
-              {product.discountedPrice && product.price && (
-                <DiscountBadge product={product} />
-              )}
-            </div>
-            <div className={styles.productTextContainer}>
-              <h3>{product.title}</h3>
-              <Rating rating={product.rating} />
-              <PriceRenderer
-                discountedPrice={product.discountedPrice}
-                price={product.price}
+  <main className={styles.mainContent}>
+    {product && (
+      <>
+        <article className={styles.productDetailsContainer}>
+          <div className={styles.imageContainer}>
+            {product.image && (
+              <img
+                className={styles.productImage}
+                src={product.image.url}
+                alt={product.title}
               />
-              <div className={styles.descContainer}>
-                <h4>Description</h4>
-                <p>{product.description}</p>
-              </div>
-              <div className="buttonContainer">
-                <PrimaryButton product={product} />
-              </div>
-            </div>
+            )}
+            {product.discountedPrice && product.price && (
+              <DiscountBadge product={product} />
+            )}
           </div>
-          <section>
-            {hasReviews && (
-                <div className={styles.reviewsContainer}>
-                  <h4 className={styles.reviewsTitle}>Reviews</h4>
-                  {product.reviews.map((review) => (
-                    <div key={review.id} className={styles.reviewItem}>
-                      <h4><Rating rating={review.rating}/></h4>
-                      <p>{review.description}</p>
-                      <p>By: {review.username}</p>
-                    </div>
-                  ))}
-                </div>
-              )}
+          <section className={styles.productTextContainer}>
+            <h2>{product.title}</h2>
+            <Rating rating={product.rating} />
+            <PriceRenderer
+              discountedPrice={product.discountedPrice}
+              price={product.price}
+            />
+            <div className={styles.descContainer}>
+              <h3>Description</h3>
+              <p>{product.description}</p>
+            </div>
+            <div className="buttonContainer">
+              <PrimaryButton product={product} />
+            </div>
           </section>
-          
-        </>
-      )}
-    </main>
-  );
-}
+        </article>
+        <section>
+          {hasReviews && (
+            <div className={styles.reviewsContainer}>
+              <h3 className={styles.reviewsTitle}>Reviews</h3>
+              {product.reviews.map((review) => (
+                <div key={review.id} className={styles.reviewItem}>
+                  <h3><Rating rating={review.rating}/></h3>
+                  <p>{review.description}</p>
+                  <p>By: {review.username}</p>
+                </div>
+              ))}
+            </div>
+          )}
+        </section>
+      </>
+    )}
+  </main>
+
+
+    );
+  }
