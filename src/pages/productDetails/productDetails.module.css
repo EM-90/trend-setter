@@ -1,5 +1,9 @@
 /** @format */
 
+.mainContent {
+  padding: 0 5px;
+}
+
 .productDetailsContainer {
   position: relative;
   display: flex;
@@ -42,5 +46,28 @@ img {
   max-width: 300px;
   padding-bottom: 20px;
 }
+
+.reviewsContainer {
+  margin:10px;
+  margin-top: 20px; /* Add some margin at the top */
+}
+
+.reviewItem {
+  border: 1px solid #ccc; 
+  border-radius: 5px; 
+  padding: 10px; 
+  margin-bottom: 10px; 
+}
+
+.reviewItem p {
+  margin: 5px 0;
+}
+
+.reviewsTitle{
+  padding-bottom: 10px;
+}
+
+
+
 
 

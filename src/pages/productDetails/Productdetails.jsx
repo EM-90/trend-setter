@@ -14,17 +14,22 @@ export default function ProductDetails() {
   const apiUrl = `https://v2.api.noroff.dev/online-shop/${id}`;
   const { data: productData, loading, error } = UseFetchData(apiUrl);
   const [product, setProduct] = useState(null);
+  const [hasReviews, setHasReviews] = useState(false);
+  
 
   useEffect(() => {
     if (productData) {
       setProduct(productData);
+      if (productData.reviews && productData.reviews.length > 0) {
+        setHasReviews(true);
+      }
     }
   }, [productData, id]);
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
   return (
-    <div>
+    <main className={styles.mainContent}>
       {product && (
         <>
           <div className={styles.productDetailsContainer}>
@@ -56,8 +61,23 @@ export default function ProductDetails() {
               </div>
             </div>
           </div>
+          <section>
+            {hasReviews && (
+                <div className={styles.reviewsContainer}>
+                  <h4 className={styles.reviewsTitle}>Reviews</h4>
+                  {product.reviews.map((review) => (
+                    <div key={review.id} className={styles.reviewItem}>
+                      <h4><Rating rating={review.rating}/></h4>
+                      <p>{review.description}</p>
+                      <p>By: {review.username}</p>
+                    </div>
+                  ))}
+                </div>
+              )}
+          </section>
+          
         </>
       )}
-    </div>
+    </main>
   );
 }
