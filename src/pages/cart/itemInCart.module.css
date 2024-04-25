@@ -1,5 +1,6 @@
 /** @format */
 
+
 .cartProduct {
   display: flex;
   flex-wrap: wrap;
@@ -39,4 +40,13 @@
   background-color: white;
   padding: 10px;
   border-top: 1px solid #ccc;
+}
+
+
+
+@media screen and (max-width: 350px) {
+  .cartContainer {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }

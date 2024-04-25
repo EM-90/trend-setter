@@ -1,4 +1,7 @@
 /** @format */
+.imageContainer {
+  width:100%;
+}
 
 .card {
   display: flex;
@@ -65,4 +68,15 @@
 
 .card:hover .cardImage {
   transform: scale(1.05);
+}
+
+@media screen and (max-width: 350px) {
+  .cardImage {
+    object-fit: cover;
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    position: relative;
+  }
 }

@@ -9,7 +9,7 @@ import PriceRenderer from "../../rendering/priceRender/Index";
 export default function ProductCard(props) {
   return (
     <Link to={`/product/${props.id}`} className={styles.card}>
-      <div className="imageContainer">
+      <div className={styles.imageContainer}>
         <img src={props.image} alt={props.title} className={styles.cardImage} />
         <DiscountBadge product={props} />
       </div>

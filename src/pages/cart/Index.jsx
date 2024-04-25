@@ -14,7 +14,8 @@ export const Cart = () => {
   const { cartItems } = useCart();
 
   return (
-    <div>
+  <div className={styles.cartContainer}>
+    <section>
       <h2>Cart</h2>
       {cartItems.map((item, index) => (
         <div className={styles.cartProduct} key={index}>
@@ -44,7 +45,10 @@ export const Cart = () => {
         <GetTotalValue />
         <CheckoutButton />
       </div>
-    </div>
+    </section>
+ </div>
+  
+      
   );
 };
 
