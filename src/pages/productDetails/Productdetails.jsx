@@ -68,8 +68,8 @@ export default function ProductDetails() {
               {product.reviews.map((review) => (
                 <div key={review.id} className={styles.reviewItem}>
                   <h3><Rating rating={review.rating}/></h3>
-                  <p>{review.description}</p>
-                  <p>By: {review.username}</p>
+                  <q>{review.description}</q>
+                  <p className={styles.faded}>By: {review.username}</p>
                 </div>
               ))}
             </div>

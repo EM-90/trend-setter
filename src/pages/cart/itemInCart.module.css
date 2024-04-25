@@ -50,3 +50,14 @@
     flex-wrap: wrap;
   }
 }
+
+@media screen and (max-width: 350px) {
+  .cartProduct {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left:10px;
+    margin-bottom:20px;
+    padding:0px;
+    gap: 10px;
+  }
+}

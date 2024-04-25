@@ -76,7 +76,7 @@ const Contact = () => {
   };
 
   return (
-    <div className={styles.contactPage}>
+    <main className={styles.contactPage}>
       <h1>Contact Us</h1>
        {formSubmitted && 
        <figure className={styles.successMessage}>
@@ -105,9 +105,7 @@ const Contact = () => {
             onChange={handleChange}
             required
           /></label>
-                   {formErrors.lastName && (
-    <span className={styles.inputError}>{formErrors.lastName}</span>
-  )}
+                   {formErrors.lastName && (<span className={styles.inputError}>{formErrors.lastName}</span>)}
         </div>
         <div className={styles.formGroup}>
           <label htmlFor="subject">Subject:
@@ -119,9 +117,7 @@ const Contact = () => {
             onChange={handleChange}
             required
           /></label>
-            {formErrors.subject && (
-    <span className={styles.inputError}>{formErrors.subject}</span>
-  )}
+            {formErrors.subject && (<span className={styles.inputError}>{formErrors.subject}</span>)}
         </div>
         <div className={styles.formGroup}>
           <label htmlFor="email">Email:
@@ -133,9 +129,7 @@ const Contact = () => {
             onChange={handleChange}
             required
           /></label>
-                   {formErrors.email && (
-    <span className={styles.inputError}>{formErrors.email}</span>
-  )}
+                   {formErrors.email && (<span className={styles.inputError}>{formErrors.email}</span>)}
         </div>
         <div className={styles.formGroup}>
           <label htmlFor="body">Body:</label>
@@ -152,7 +146,7 @@ const Contact = () => {
          <button type="submit">Submit</button>
         </div>
       </form>
-    </div>
+    </main>
   );
 };
 

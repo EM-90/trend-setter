@@ -14,37 +14,38 @@ export const Cart = () => {
   const { cartItems } = useCart();
 
   return (
-    <div className={styles.cartContainer}>
-      <h2>Cart</h2>
-      {cartItems.map((item, index) => (
-        <div className={styles.cartProduct} key={index}>
-          <div className={styles.imageContainer}>
-            <img
-              className={styles.productImage}
-              src={item.image.url}
-              alt={item.title}
-            />
-            <DiscountBadge product={item} />
-          </div>
-          <div className={styles.productContent}>
-            <h3>{item.title}</h3>
-            <Rating rating={item.rating} />
-            <PriceRenderer
-              discountedPrice={item.discountedPrice}
-              price={item.price}
-            />
-          </div>
-          <div className={styles.cartRegulation}>
-            <QtyDisplay index={index} item={item} />
-            <RemoveButton index={index} />
-          </div>
+  <section className={styles.cartContainer}>
+    <h2>Cart</h2>
+    {cartItems.map((item, index) => (
+      <article className={styles.cartProduct} key={index}>
+        <div className={styles.imageContainer}>
+          <img
+            className={styles.productImage}
+            src={item.image.url}
+            alt={item.title}
+          />
+          <DiscountBadge product={item} />
         </div>
-      ))}
-      <div className={styles.totalContainer}>
-        <GetTotalValue />
-        <CheckoutButton />
-      </div>
+        <div className={styles.productContent}>
+          <h3>{item.title}</h3>
+          <Rating rating={item.rating} />
+          <PriceRenderer
+            discountedPrice={item.discountedPrice}
+            price={item.price}
+          />
+        </div>
+        <div className={styles.cartRegulation}>
+          <QtyDisplay index={index} item={item} />
+          <RemoveButton index={index} />
+        </div>
+      </article>
+    ))}
+    <div className={styles.totalContainer}>
+      <GetTotalValue />
+      <CheckoutButton />
     </div>
+</section>
+
   );
 };
 

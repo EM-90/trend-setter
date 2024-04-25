@@ -67,6 +67,18 @@ img {
   padding-bottom: 10px;
 }
 
+.faded {
+  color:#838383;
+}
+
+@media screen and (max-width: 300px) {
+  .productTextContainer {
+    display: flex;
+    flex-direction: column;
+    padding:0px;
+    gap: 5px;
+  }
+}
 
 
 

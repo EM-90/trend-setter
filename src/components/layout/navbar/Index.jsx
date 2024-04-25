@@ -25,7 +25,7 @@ export const Navbar = () => {
   }, []);
 
   return (
-    <div className={styles.navBar}>
+    <nav className={styles.navBar}>
       <div className={styles.navContentContainer}>
         <Link to ="/" className={styles.logo}>TrendSetter</Link>
         <div className={styles.navItems}>
@@ -51,6 +51,6 @@ export const Navbar = () => {
           </div>
         </div>
       </div>
-    </div>
+    </nav>
   );
 };
