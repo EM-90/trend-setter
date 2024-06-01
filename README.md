@@ -41,6 +41,7 @@ npm run build
 npm run dev
 ```
 
-##Contact
+## Contact
+
 LinkedIn
 https://www.linkedin.com/in/eirik-michielsen-48aa3421a/
