@@ -1,5 +1,11 @@
 # Trend Setter
+
+![js-frameworks-noroff-ecom-front-page](https://github.com/EM-90/trend-setter/assets/94170154/6392b0cf-aa5c-4532-b79b-e50d1542cc46)
+![cart-from-js-frameworks](https://github.com/EM-90/trend-setter/assets/94170154/bc1e54ab-5492-4460-97b4-956975091d3e)
+
+
 ## JS frameworks Course assignment
+
 
 This a course assignment for learning the basics of React.
 This assignment dident have a specific target audience so after looking at the api i chose to call the site Trend Setter,
